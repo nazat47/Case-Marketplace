@@ -303,6 +303,7 @@ const DesignConfigurator = ({
                   ({ name, options: selectableOptions }) => (
                     <RadioGroup
                       key={name}
+                      //@ts-ignore
                       value={options[name]}
                       onChange={(val) => {
                         setOptions((prev) => ({
@@ -380,7 +381,9 @@ const DesignConfigurator = ({
                 onClick={() =>
                   mutate({
                     color: options.color.value,
+                    //@ts-ignore
                     finish: options.finish.value,
+                    //@ts-ignore
                     material: options.material.value,
                     model: options.model.value,
                     configId,
