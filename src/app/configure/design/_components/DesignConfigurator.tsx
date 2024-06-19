@@ -393,7 +393,7 @@ const DesignConfigurator = ({
                 className="w-full"
               >
                 Continue
-                <ArrowRight className="size-4 ml-1.5 inline" />
+                <ArrowRight className="size-3 ml-1.5 inline" />
               </Button>
             </div>
           </div>
