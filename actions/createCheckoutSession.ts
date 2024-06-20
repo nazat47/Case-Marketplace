@@ -24,7 +24,7 @@ export const createCheckoutSession = async ({
   if (!user) {
     throw new Error("You need to be logged in");
   }
-  // calculating price on server side, do not calculate price on client side as it might get altered
+  // calculating price on server side, do not calculate price on client side as it might get altered.
   const { finish, material } = configuration;
   let price = BASE_PRICE;
   if (finish === "textured") {
