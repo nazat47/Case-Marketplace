@@ -41,5 +41,6 @@ export function constructMetaData({
       creator: "@nazatmustag",
     },
     icons,
+    metadataBase:new URL("https://case-marketplace.vercel.app/")
   };
 }
