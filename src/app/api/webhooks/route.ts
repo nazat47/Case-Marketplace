@@ -10,7 +10,6 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: NextRequest) {
   try {
-    console.log("hitted");
     const body = await req.text();
     const signature = headers().get("stripe-signature");
     if (!signature) {
@@ -64,7 +63,7 @@ export async function POST(req: NextRequest) {
         },
       });
       await resend.emails.send({
-        from: "CaseCobra <nazat.mf@gmail.com>",
+        from: "onboarding@resend.dev",
         to: [event.data.object.customer_details.email],
         subject: "Thanks for your order!",
         react: OrderReceiveEmail({
