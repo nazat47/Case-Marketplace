@@ -64,7 +64,7 @@ const DesignConfigurator = ({
     finish: FINISHES.options[0],
   });
 
-  const { mutate } = useMutation({
+  const { mutate, isPending } = useMutation({
     mutationKey: ["save-config"],
     mutationFn: async (args: SaveConfigProps) => {
       await Promise.all([saveConfiguration(), saveConfig(args)]);
@@ -378,6 +378,9 @@ const DesignConfigurator = ({
                 )}
               </p>
               <Button
+                isLoading={isPending}
+                disabled={isPending}
+                loadingText="Saving"
                 onClick={() =>
                   mutate({
                     color: options.color.value,
